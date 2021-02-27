@@ -10,7 +10,7 @@ public class GeekTresure : MonoBehaviour
     void Start()
     {
         string[] title = tlist.title;
-        Debug.Log(title[0]);
+        //Debug.Log(title[0]);
     }
 
     // Update is called once per frame

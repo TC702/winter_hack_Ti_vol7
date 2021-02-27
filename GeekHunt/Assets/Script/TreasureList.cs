@@ -7,14 +7,14 @@ public class TreasureList : MonoBehaviour
     private int size = 9;
     public string[] title = new string[9]
     {
-        "Hiroyuki",
+        "ひろゆき",
         "2ch",
-        "keiziban",
-        "a",
-        "i",
+        "掲示板",
+        "SE",
+        "プログラマー",
         "u",
         "e",
-        "o",
+        "フルスタックエンジニア",
         "k"
 
     };
@@ -23,8 +23,8 @@ public class TreasureList : MonoBehaviour
         "2chを作った人",
         "ネットの匿名掲示板",
         "ゴミだめ",
-        "a",
-        "i",
+        "情報システム関連の業務に従事する者",
+        "コンピュータのプログラムを作成する人",
         "u",
         "e",
         "o",
@@ -32,7 +32,7 @@ public class TreasureList : MonoBehaviour
     };
     public bool[] isHave = new bool[9]
     {
-        false,
+        true,
         true,
         false,
         false,
@@ -45,7 +45,33 @@ public class TreasureList : MonoBehaviour
 
     public int Size { get => size; set => size = value; }
 
-    
+    private GameObject Contents;
+    private GameObject List_con;
+
+    void Start() 
+    {
+        Contents = this.transform.Find("Contents").gameObject;
+        List_con = this.transform.Find("Scroll View").gameObject;
+    }
+
+
+    public void GetTreasure(int index)
+    {
+        if (isHave[index] == false)
+        {
+            isHave[index] = true;
+            //Debug.Log(string.Format("{0}: is discover = {1}", title[index], isHave[index]));
+            List_con.GetComponent<Chisiki_list_controller>().UpdateButton(index);
+            //Contents.GetComponent<EditContesnts>().SetContents(title[index], detail[index]);
+            //Contents.SetActive(true);
+            //return true;
+        }
+        else
+        {
+            Debug.Log("This Treasure is already gotton.");
+            //return false;
+        }
+    }
 
 
     //public string[] Title { get => title; set => title = value; }

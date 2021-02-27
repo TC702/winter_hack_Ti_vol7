@@ -143,7 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f939a18d58dad401383ed920991319f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Content: {fileID: 5369921622868194048, guid: f5883a5028763481e9b4b4f391935fa2, type: 3}
   num: 0
 --- !u!1 &1897028071268416671
 GameObject:
@@ -219,7 +218,7 @@ MonoBehaviour:
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: ' 000 : Hiroyuki'

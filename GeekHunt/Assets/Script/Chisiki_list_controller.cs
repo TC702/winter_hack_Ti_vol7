@@ -8,20 +8,25 @@ public class Chisiki_list_controller : MonoBehaviour
     public GameObject button;
     private GameObject Contents;
     private GameObject Content;
+    private GameObject[] Buttons;
 
     // Start is called before the first frame update
     void Start()
     {
         int size = tlist.Size;
+        Buttons = new GameObject[size];
         var button_parent = this.transform.Find("Viewport/Content");
         for(int i = 0; i < size; i++)
         {
-            var chisiki = Instantiate(button, button_parent);
-            chisiki.GetComponent<Button>().SetNumber(i);
+            //var chisiki = Instantiate(button, button_parent);
+            //chisiki.GetComponent<Button>().SetNumber(i);
             //Debug.Log(string.Format("{0}: seted",i));
+            Buttons[i] = Instantiate(button, button_parent);
+            Buttons[i].GetComponent<Button>().SetNumber(i);
+            
         }
         Contents = GameObject.Find("Contents");
-        Contents.SetActive(false);
+        //Contents.SetActive(false);
 
         Content = GameObject.Find("Content");
         float bottom = -15 * (size);
@@ -35,5 +40,12 @@ public class Chisiki_list_controller : MonoBehaviour
         
     }
 
-
+    public void UpdateButton(int index)
+    {
+        //var b_script = 
+        Buttons[index].GetComponent<Button>().GetTreasure_received();
+        //b_script.SetNumber(index);
+        //b_script.onClick();
+    }
 }
+
