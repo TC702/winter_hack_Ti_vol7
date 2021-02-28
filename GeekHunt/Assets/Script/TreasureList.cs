@@ -30,18 +30,6 @@ public class TreasureList : MonoBehaviour
         "強い人。",
         "3Dゲームを作る際によく使われるフレームワークの１つ。2Dゲームを作る際にも活躍。"
     };
-    public bool[] isHave = new bool[9]
-    {
-        true,
-        true,
-        false,
-        false,
-        true,
-        false,
-        false,
-        true,
-        false
-    };
 
     public int Size { get => size; set => size = value; }
 
@@ -57,9 +45,9 @@ public class TreasureList : MonoBehaviour
 
     public void GetTreasure(int index)
     {
-        if (isHave[index] == false)
+        if (GameManager.instance.isHave[index] == false)
         {
-            isHave[index] = true;
+            GameManager.instance.isHave[index] = true;
             //Debug.Log(string.Format("{0}: is discover = {1}", title[index], isHave[index]));
             List_con.GetComponent<Chisiki_list_controller>().UpdateButton(index);
             //Contents.GetComponent<EditContesnts>().SetContents(title[index], detail[index]);

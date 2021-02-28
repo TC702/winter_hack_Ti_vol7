@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chisiki_list_controller : MonoBehaviour
 {
     TreasureList tlist = new TreasureList();
+    public static Chisiki_list_controller chisiki_List_Controller; 
     public GameObject button;
     private GameObject Contents;
     private GameObject Content;
@@ -43,7 +44,9 @@ public class Chisiki_list_controller : MonoBehaviour
     public void UpdateButton(int index)
     {
         //var b_script = 
-        Buttons[index].GetComponent<Button>().GetTreasure_received();
+        int cnt = GameManager.instance.cnt;
+        Buttons[cnt].GetComponent<Button>().GetTreasure_received();
+        GameManager.instance.cnt++;
         //b_script.SetNumber(index);
         //b_script.onClick();
     }
