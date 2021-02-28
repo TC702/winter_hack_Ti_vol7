@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public int food = 100;
     public float attack = 1;
 
+    public int cnt = 0;
     public bool[] isHave = new bool[9]
     {
         false,

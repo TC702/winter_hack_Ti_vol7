@@ -10,7 +10,6 @@ public class Chisiki_list_controller : MonoBehaviour
     private GameObject Contents;
     private GameObject Content;
     private GameObject[] Buttons;
-    public int cnt = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +44,9 @@ public class Chisiki_list_controller : MonoBehaviour
     public void UpdateButton(int index)
     {
         //var b_script = 
-        cnt++;
+        int cnt = GameManager.instance.cnt;
         Buttons[cnt].GetComponent<Button>().GetTreasure_received();
+        GameManager.instance.cnt++;
         //b_script.SetNumber(index);
         //b_script.onClick();
     }
