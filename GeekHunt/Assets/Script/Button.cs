@@ -22,7 +22,7 @@ public class Button : MonoBehaviour
         rootParent = transform.root.gameObject;
         Content = rootParent.transform.Find("Menu/Chisiki_Panel/Contents").gameObject;
         Contents_edit = Content.GetComponent<EditContesnts>();
-        Contents_edit.SetContents("a", "i");
+        Contents_edit.SetContents("???", "???????????????????");
         //chisiki_p = rootParent.transform.Find("Chisiki_Panel").gameObject;
         //tlist = chisiki_p.GetComponent<TreasureList>();
         //Debug.Log(Content.name);
@@ -42,7 +42,7 @@ public class Button : MonoBehaviour
         {
             SetNumber(num);
         }
-        if (tlist.isHave[num])
+        if (GameManager.instance.isHave[num])
         {
             //Debug.Log("The Chisiki is have");
             string title = tlist.title[num];
@@ -67,7 +67,7 @@ public class Button : MonoBehaviour
         Text button_name = this.GetComponentInChildren<Text>();
         int title_length = tlist.title[num].Length;
         string Sercret = new string('?', title_length);
-        if (tlist.isHave[num])
+        if (GameManager.instance.isHave[num])
         {
             button_name.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
             if (title_length < 10)
@@ -77,7 +77,7 @@ public class Button : MonoBehaviour
             else
             {
                 //Debug.Log(tlist.title[0].ToCharArray());
-                string title = tlist.title[num].Substring(0, 9);
+                string title = tlist.title[num].Substring(0, 5);
                 button_name.text = string.Format(" {0:D3} : {1:}...", num, title);
             }
         }
@@ -91,7 +91,7 @@ public class Button : MonoBehaviour
 
     public void GetTreasure_received()
     {
-        tlist.isHave[num] = true;
+        GameManager.instance.isHave[num] = true;
         isNew = true;
         Text button_name = this.GetComponentInChildren<Text>();
         int title_length = tlist.title[num].Length;

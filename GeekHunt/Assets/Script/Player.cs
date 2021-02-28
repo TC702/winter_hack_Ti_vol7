@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     public LayerMask blockingLayer;
     private BoxCollider2D boxCollider;
 
-    public int attack = 1;
     private Animator animator;
 
     private int food;
@@ -25,7 +24,8 @@ public class Player : MonoBehaviour
     private bool open = true;
     public BoardManager boardManager;
     public GameObject gameManager;
-   
+    public GameObject Chisiki_lc;
+
 
 
     // Start is called before the first frame update
@@ -60,11 +60,6 @@ public class Player : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
             ATMove(horizontal, vertical);
-
-        /*if (Input.GetKeyDown(KeyCode.E))
-        {
-            
-        }*/
     }
 
     
@@ -94,7 +89,7 @@ public class Player : MonoBehaviour
     
     public void OnCantMove(Destroy hit)
     {
-        hit.AttackDamage(attack);
+        hit.AttackDamage(GameManager.instance.attack);
         animator.SetTrigger("Attack");
     }
 
@@ -143,14 +138,14 @@ public class Player : MonoBehaviour
         if (collision.tag == "Food")
         {
             food += foodpoint;
-            foodText.text = "Food:" + food;
+            foodText.text = foodpoint + "heals" + " 　Food:" + food;
             collision.gameObject.SetActive(false);
         }
 
         else if (collision.tag == "Soda")
         {
             food += sodapoint;
-            foodText.text = "Food:" + food;
+            foodText.text = sodapoint + "heals" + " 　Food:" + food;
             collision.gameObject.SetActive(false);
         }
 
@@ -163,6 +158,8 @@ public class Player : MonoBehaviour
         else if (collision.tag == "TresureBox" && open)
         {
             open = false;
+            GameManager.instance.attack += 0.2f;
+            Chisiki_lc.GetComponent<Chisiki_list_controller>().UpdateButton(3);
             Vector2 pos = GameObject.FindGameObjectWithTag("TresureBox").transform.position;
             boardManager.TresureOpen(pos);
             collision.gameObject.SetActive(false);

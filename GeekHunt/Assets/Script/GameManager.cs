@@ -19,6 +19,20 @@ public class GameManager : MonoBehaviour
     public GameObject levelImage;
 
     public int food = 100;
+    public float attack = 1;
+
+    public bool[] isHave = new bool[9]
+    {
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    };
 
     private List<Enemy> enemies;
 
@@ -26,8 +40,8 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
+        //else if (instance != this)
+          //  Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);            //シーンをまたいだ後でもそのシーンを破壊しない
 
@@ -56,7 +70,7 @@ public class GameManager : MonoBehaviour
         doingSetup = true;
         levelImage = GameObject.Find("LevelImage");
         levelText = GameObject.Find("LevelText").GetComponent<Text>();
-        levelText.text = "Day:" + level;
+        levelText.text = "Floor:" + level + "   Attack:" + GameManager.instance.attack;
         levelImage.SetActive(true);
         Invoke("HideLevelImage", 1f);                                  //指定の関数を指定の秒数後に行う
 

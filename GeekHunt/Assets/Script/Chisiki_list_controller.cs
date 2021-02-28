@@ -5,10 +5,12 @@ using UnityEngine;
 public class Chisiki_list_controller : MonoBehaviour
 {
     TreasureList tlist = new TreasureList();
+    public static Chisiki_list_controller chisiki_List_Controller; 
     public GameObject button;
     private GameObject Contents;
     private GameObject Content;
     private GameObject[] Buttons;
+    public int cnt = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +45,8 @@ public class Chisiki_list_controller : MonoBehaviour
     public void UpdateButton(int index)
     {
         //var b_script = 
-        Buttons[index].GetComponent<Button>().GetTreasure_received();
+        cnt++;
+        Buttons[cnt].GetComponent<Button>().GetTreasure_received();
         //b_script.SetNumber(index);
         //b_script.onClick();
     }

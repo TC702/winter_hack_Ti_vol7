@@ -5,10 +5,10 @@ using UnityEngine;
 public class Destroy : MonoBehaviour
 {
 
-    public int wallHp = 3;
+    public float wallHp = 3;
     public Sprite atkWall;
 
-    public int enemyHp = 5;
+    public float enemyHp = 5;
     private Enemy enemy;
 
     private SpriteRenderer spriteRenderer;
@@ -20,7 +20,7 @@ public class Destroy : MonoBehaviour
         enemy = GetComponent<Enemy>();
     }
 
-    public void AttackDamage(int attack)
+    public void AttackDamage(float attack)
     {
         if(gameObject.CompareTag("Wall"))
         {
