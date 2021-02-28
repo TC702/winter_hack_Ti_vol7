@@ -48,7 +48,7 @@ public class TreasureList : MonoBehaviour
     private GameObject Contents;
     private GameObject List_con;
 
-    void Start() 
+    void Start()
     {
         Contents = this.transform.Find("Contents").gameObject;
         List_con = this.transform.Find("Scroll View").gameObject;
