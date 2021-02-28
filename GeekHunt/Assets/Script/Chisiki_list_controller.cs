@@ -16,14 +16,14 @@ public class Chisiki_list_controller : MonoBehaviour
         int size = tlist.Size;
         Buttons = new GameObject[size];
         var button_parent = this.transform.Find("Viewport/Content");
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             //var chisiki = Instantiate(button, button_parent);
             //chisiki.GetComponent<Button>().SetNumber(i);
             //Debug.Log(string.Format("{0}: seted",i));
             Buttons[i] = Instantiate(button, button_parent);
             Buttons[i].GetComponent<Button>().SetNumber(i);
-            
+
         }
         Contents = GameObject.Find("Contents");
         //Contents.SetActive(false);
@@ -37,7 +37,7 @@ public class Chisiki_list_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateButton(int index)
@@ -48,4 +48,3 @@ public class Chisiki_list_controller : MonoBehaviour
         //b_script.onClick();
     }
 }
-

@@ -251,7 +251,6 @@ GameObject:
   - component: {fileID: 3603717475499251369}
   - component: {fileID: 3603717475499251370}
   - component: {fileID: 3603717475499251371}
-  - component: {fileID: 3603717475499251381}
   - component: {fileID: 3603717475499251368}
   m_Layer: 5
   m_Name: Batu
@@ -317,18 +316,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3603717475499251381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3603717475499251374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a84d35e2451643e08abb3fe95bf06f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3603717475499251368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +381,6 @@ GameObject:
   - component: {fileID: 3603717475832102311}
   - component: {fileID: 3603717475832102308}
   - component: {fileID: 3603717475832102309}
-  - component: {fileID: 3603717475832102331}
   - component: {fileID: 3603717475832102310}
   m_Layer: 5
   m_Name: Batu
@@ -460,18 +446,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3603717475832102331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3603717475832102304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a84d35e2451643e08abb3fe95bf06f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3603717475832102310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,9 +489,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3603717475832102331}
-        m_MethodName: onClick
-        m_Mode: 1
+      - m_Target: {fileID: 3021042002977894485}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1087,7 +1061,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7163308299014155854}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.6056594
+  m_Size: 0.4146372
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

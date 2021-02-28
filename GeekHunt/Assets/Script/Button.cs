@@ -31,7 +31,7 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void onClick()
@@ -70,7 +70,7 @@ public class Button : MonoBehaviour
         if (tlist.isHave[num])
         {
             button_name.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
-            if(title_length < 10)
+            if (title_length < 10)
             {
                 button_name.text = string.Format(" {0:D3} : {1}", num, tlist.title[num]);
             }

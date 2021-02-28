@@ -2,7 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
+/[Ll]ibrary/*
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Library/ArtifactDB
+Library/InspectorExpandedItems.asset
+Library/SourceAssetDB
+Library/StateCache/Hierarchy/0f0701-mainStage.json
+Library/StateCache/SceneView/37b068-mainStage.json
