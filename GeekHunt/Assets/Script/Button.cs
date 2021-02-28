@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Button : MonoBehaviour
 {
-    private GameObject Content;
+    public GameObject Content;
     private GameObject rootParent;
     private GameObject chisiki_p;
     public int num;
     private bool isNew = false;
 
     private TreasureList tlist = new TreasureList();
+    public EditContesnts Contents_edit;
 
     //private TreasureList tlist;
 
@@ -19,10 +20,12 @@ public class Button : MonoBehaviour
     void Start()
     {
         rootParent = transform.root.gameObject;
-        Content = rootParent.transform.Find("Chisiki_Panel/Contents").gameObject;
+        Content = rootParent.transform.Find("Menu/Chisiki_Panel/Contents").gameObject;
+        Contents_edit = Content.GetComponent<EditContesnts>();
+        Contents_edit.SetContents("a", "i");
         //chisiki_p = rootParent.transform.Find("Chisiki_Panel").gameObject;
         //tlist = chisiki_p.GetComponent<TreasureList>();
-        //Debug.Log("button find contents");
+        //Debug.Log(Content.name);
     }
 
     // Update is called once per frame
@@ -41,12 +44,14 @@ public class Button : MonoBehaviour
         }
         if (tlist.isHave[num])
         {
+            //Debug.Log("The Chisiki is have");
             string title = tlist.title[num];
             string detail = tlist.detail[num];
             Content.GetComponent<EditContesnts>().SetContents(title, detail);
         }
         else
         {
+            //Debug.Log("The Chisiki is not have");
             string title = new string('?', tlist.title[num].Length);
             string detail = new string('?', tlist.detail[num].Length);
             Content.GetComponent<EditContesnts>().SetContents(title, detail);
