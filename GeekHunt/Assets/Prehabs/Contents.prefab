@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hiroyuki
+  m_Text: 2ch
 --- !u!1 &3213689848378342626
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "2ch\u3092\u4F5C\u3063\u305F\u4EBA"
+  m_Text: "\u30CD\u30C3\u30C8\u306E\u533F\u540D\u63B2\u793A\u677F"
 --- !u!1 &5369921622868194048
 GameObject:
   m_ObjectHideFlags: 0
