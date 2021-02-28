@@ -50,7 +50,7 @@ public class BoardManager : MonoBehaviour
                 else
                     toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
 
-                Instantiate(toInstantiate, new Vector2(x, y), Quaternion.identity);
+                Instantiate(toInstantiate, new Vector2(x-2, y), Quaternion.identity);
             }
     }
 
@@ -74,7 +74,7 @@ public class BoardManager : MonoBehaviour
             Vector2 randomPosition = RandomPosition();
             GameObject tileChoise = tileArray[Random.Range(0, tileArray.Length)];
 
-            Instantiate(tileChoise, randomPosition, Quaternion.identity);
+            Instantiate(tileChoise, new Vector2(randomPosition.x-2, randomPosition.y), Quaternion.identity);
         }
     }
 
@@ -88,12 +88,12 @@ public class BoardManager : MonoBehaviour
         //int enemyCount = (int)Mathf.Log(level, 2f);
         //Debug.Log(enemyCount);
         LayoutRandomObject(enemyTiles, 1, 5);
-        Instantiate(exit, new Vector2(colums - 1, rows - 1), Quaternion.identity);
+        Instantiate(exit, new Vector2(colums - 3, rows - 1), Quaternion.identity);
 
         x = Random.Range(1, colums-1);
         y = Random.Range(1, rows-1);
         if((x != 1 && y != 1) || (x != 7 && y != 7))
-            Instantiate(Close_tresureBox, new Vector2(x, y), Quaternion.identity);
+            Instantiate(Close_tresureBox, new Vector2(x-2, y), Quaternion.identity);
 
         
     }
